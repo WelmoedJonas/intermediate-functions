@@ -9,7 +9,25 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
+//---PSEUDO-CODE---
+// 1. Declareer een functie met de naam getEmailDomain, die als parameter een e-mailadres verwacht.
+// 2. Zorg ervoor dat de functie het gedeelte van de string (het e-mailadres) na het @ returned (=het domein).
+//    2.1 Schrijf code die het indexnummer van het @ weergeeft.
+//    2.2 Schrijf code die het indexnummer van het laatste karakter weergeeft.
+//    2.3 Gebruik de substringmethode
 
+function getEmailDomain(emailadress) {
+    const indexAtSign = emailadress.indexOf("@");
+    const indexLastCharacter = emailadress.length;
+    const domain = emailadress.substring(indexAtSign + 1, indexLastCharacter);
+    return domain
+}
+
+const domainOne = getEmailDomain("n.eeken@novi-education.nl");
+const domainTwo = getEmailDomain("t.mellink@novi.nl");
+const domainThree = getEmailDomain("a.wiersma@outlook.com");
+
+console.log(domainOne, domainTwo, domainThree);
 
 
 /* Opdracht  2 */
