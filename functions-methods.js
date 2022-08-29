@@ -9,7 +9,25 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
+//---PSEUDO-CODE---
+// 1. Declareer een functie met de naam getEmailDomain, die als parameter een e-mailadres verwacht.
+// 2. Zorg ervoor dat de functie het gedeelte van de string (het e-mailadres) na het @ returned (=het domein).
+//    2.1 Schrijf code die het indexnummer van het @ weergeeft.
+//    2.2 Schrijf code die het indexnummer van het laatste karakter weergeeft.
+//    2.3 Gebruik de substringmethode
 
+function getEmailDomain(emailadress) {
+    const indexAtSign = emailadress.indexOf("@");
+    const indexLastCharacter = emailadress.length;
+    const domain = emailadress.substring(indexAtSign + 1, indexLastCharacter);
+    return domain
+}
+
+const domainOne = getEmailDomain("n.eeken@novi-education.nl");
+const domainTwo = getEmailDomain("t.mellink@novi.nl");
+const domainThree = getEmailDomain("a.wiersma@outlook.com");
+
+console.log(domainOne, domainTwo, domainThree);
 
 
 /* Opdracht  2 */
@@ -20,6 +38,33 @@
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
+//---PSEUDO-CODE---
+// 1. Declareer een functie met parameter genaamd typeOfEmail. De parameter is 'emailadress'.
+// 2. Zorg ervoor dat de functie de categorie 'medewerker' 'student' of 'extern' returned, op basis van het e-maildomein.
+//    2.1 Maak een variabele die het indexnummer van @ geeft. Gebruik IndexOf.
+//    2.2 Maak een variabele die het indexnummer van het laatste karakter geeft. Gebruik length property.
+//    2.3 Maak een variabele die op basis van een substring het domein inclusief @ weergeeft.
+//    2.4 Gebruik deze variabele als conditie voor het if-statement (===).
+
+function typeOfEmail(emailadress) {
+    const indexAtSign = emailadress.indexOf("@");
+    const indexLastCharacter = emailadress.length;
+    const domainIncludingAtSign = emailadress.substring(indexAtSign, indexLastCharacter);
+    if (domainIncludingAtSign === "@novi-education.nl") {
+        return "Student";
+    } else if (domainIncludingAtSign === "@novi.nl") {
+        return "Medewerker";
+    } else {
+        return "Extern";
+    }
+}
+
+const inputOne = typeOfEmail("n.eeken@novi-education.nl");
+const inputTwo = typeOfEmail("t.mellink@novi.nl");
+const inputThree = typeOfEmail("novi.nlaapjesk@outlook.com");
+const inputFour = typeOfEmail("a.wiersma@outlook.com");
+
+console.log(inputOne, inputTwo, inputThree, inputFour);
 
 
 /* Opdracht  3 */
@@ -34,3 +79,24 @@
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+//---PSEUDO-CODE---
+// 1. Declareer een functie genaamd checkEmailValidity met 'emailadress' als parameter.
+// 2. Declareer een if-statement die checkt of 'emailadress' een @-teken bevat, of 'emailadress geen komma bevat en of 'emailadress' geen punt als laatste karakter heeft.
+// 3. Return 'true' of 'false', afhankelijk van of alle bovengestelde condities waar zijn.
+
+function checkEmailValidity(emailadress) {
+    if (emailadress.includes("@") && (emailadress.includes(",") === false) && (emailadress.lastIndexOf(".") !== emailadress.length - 1)) {
+        return "true";
+    } else {
+        return "false";
+    }
+}
+
+const one = checkEmailValidity("n.eeken@novi.nl");
+const two = checkEmailValidity("tessmellink@novi.nl");
+const three = checkEmailValidity("n.eekenanovi.nl");
+const four = checkEmailValidity("n.eeken@novinl.");
+const five = checkEmailValidity("tessmellink@novi,nl");
+
+console.log(one, two, three, four, five);

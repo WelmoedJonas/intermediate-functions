@@ -16,6 +16,18 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 // ---- Verwachte uitkomst: 6
 
+//---PSEUDO-CODE---
+// 1. Declareer een for-loop die de waardes uit de array logt. Als de gelogde waarde groter of gelijk is aan acht, log "Cum Laude".
+// 2.
+// let cumLaudecount = 0;
+
+// for (let i = 0; i < grades.length; i++) {
+//     if (grades[i] >= 8) {
+//         cumLaudecount = cumLaudecount + 1;
+//     }
+// }
+//
+// console.log(cumLaudecount);
 
 /*  1b: Omschrijven tot een herbruikbare functie   */
 // Schrijf een functie genaamd cumLaude, die een array van cijfers verwacht (zoals grades) en het aantal Cum laude studenten teruggeeft. Gebruik hiervoor jouw antwoord van 1a.
@@ -27,8 +39,15 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
-
-
+// function cumLaude(gradesArray) {
+//     let cumLaudecount = 0
+//     for (let i = 0; i < gradesArray.length; i++) {
+//         if (gradesArray[i] >= 8) {
+//             cumLaudecount = cumLaudecount + 1;
+//         }
+//     } return cumLaudecount;
+// }
+// console.log(cumLaude([8, 9, 4, 6, 10]));
 
 /* Opdracht  2: Gemiddeld cijfer */
 
@@ -42,6 +61,15 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
+// let sum = 0;
+//
+// for (let i = 0; i < grades.length; i++) {
+//     sum += grades[i];
+// }
+//
+// const averageGrade = sum / grades.length;
+//
+// console.log(averageGrade);
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
@@ -53,7 +81,15 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // averageGrade([6, 4, 5]) geeft xxxx
 // averageGrade([8, 9, 4, 6, 10]) geeft xxxx
 
+function averageGrade(arrayGrades) {
+    let sum = 0;
+    for (let i = 0; i < arrayGrades.length; i++) {
+        sum += arrayGrades[i];
+    } const average = sum / arrayGrades.length;
+    return average;
+}
 
+console.log(averageGrade([8, 9, 4, 6, 10]));
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
