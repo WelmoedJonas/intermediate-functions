@@ -16,6 +16,19 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 // ---- Verwachte uitkomst: 6
 
+//---PSEUDO-CODE---
+// 1. Declareer een for-loop die de waardes uit de array logt. Als de gelogde waarde groter of gelijk is aan acht, log "Cum Laude".
+// 2.
+let cumLaudecount = 0;
+
+for (let i = 0; i < grades.length; i++) {
+    if (grades[i] >= 8) {
+        cumLaudecount = cumLaudecount + 1;
+    }
+}
+
+console.log(cumLaudecount);
+
 
 /*  1b: Omschrijven tot een herbruikbare functie   */
 // Schrijf een functie genaamd cumLaude, die een array van cijfers verwacht (zoals grades) en het aantal Cum laude studenten teruggeeft. Gebruik hiervoor jouw antwoord van 1a.
